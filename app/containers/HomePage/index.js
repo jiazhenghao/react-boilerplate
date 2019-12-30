@@ -1,6 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable react/prefer-stateless-function */
-
 /*
  * HomePage
  *
@@ -12,18 +9,19 @@
  * the linting exception.
  */
 
-import React from "react";
-import NavigationContainer from "../NavigationContainer";
-import LinkListContainer from "../../containers/LinkListContainer";
+import React from 'react';
+import NavigationContainer from '../NavigationContainer';
 
-export default class HomePage extends React.Component {
-  // eslint-disable-line react/prefer-stateless-function
+export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  static propTypes = {
+    children: React.PropTypes.element,
+  }
 
   render() {
     return (
       <div>
         <NavigationContainer />
-        <LinkListContainer />
+        {this.props.children}
       </div>
     );
   }

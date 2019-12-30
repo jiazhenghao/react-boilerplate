@@ -1,5 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable comma-dangle */
 /*
  *
  * NavigationContainer actions
@@ -10,32 +8,40 @@ import {
   REQUEST_TOPICS,
   REQUEST_TOPICS_SUCCEEDED,
   REQUEST_TOPICS_FAILED,
-  SELECT_TOPIC
-} from "./constants";
+  SELECT_TOPIC,
+  TOGGLE_DRAWER,
+} from './constants';
 
 export function requestTopics() {
   return {
-    type: REQUEST_TOPICS
+    type: REQUEST_TOPICS,
   };
 }
 
 export function requestTopicsSucceeded(topics) {
   return {
     type: REQUEST_TOPICS_SUCCEEDED,
-    topics
+    topics,
   };
 }
 
 export function requestTopicsFailed(message) {
   return {
     type: REQUEST_TOPICS_FAILED,
-    message
+    message,
   };
 }
 
 export function selectTopic(topic) {
   return {
     type: SELECT_TOPIC,
-    topic
+    topic,
+  };
+}
+
+
+export function toggleDrawer() {
+  return {
+    type: TOGGLE_DRAWER,
   };
 }

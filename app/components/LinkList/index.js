@@ -1,33 +1,36 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable quotes */
 /**
- *
- * LinkList
- *
- */
+*
+* LinkList
+*
+*/
 
-import React from "react";
+import React from 'react';
+import styles from './styles.css';
+import Link from '../Link';
 
-import styles from "./styles.css";
-
-function LinkList({ links }) {
+function LinkList({ links, topicName }) {
   const linkNodes = links.map(l => (
-    <div key={l.id}>
-      {l.url} - {l.description}
-    </div>
+    <Link
+      key={l.id}
+      link={l}
+    />
   ));
 
-  return <div className={styles.linkList}>{linkNodes}</div>;
+  return (
+    <div className={styles.linkList}>
+      {topicName}
+      {linkNodes}
+    </div>
+  );
 }
 
 LinkList.propTypes = {
-  links: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      description: React.PropTypes.string.isRequired,
-      url: React.PropTypes.string.isRequired,
-      id: React.PropTypes.string.isRequired
-    })
-  )
+  links: React.PropTypes.arrayOf(React.PropTypes.shape({
+    description: React.PropTypes.string.isRequired,
+    url: React.PropTypes.string.isRequired,
+    id: React.PropTypes.string.isRequired,
+  })),
+  topicName: React.PropTypes.string.isRequired,
 };
 
 export default LinkList;

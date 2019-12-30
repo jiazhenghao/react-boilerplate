@@ -5,7 +5,8 @@
  */
 
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400, 300, 500, 700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
 
 .container {
   display: block;
@@ -14,7 +15,7 @@
 
 body {
   font-family: Roboto;
-  background-color: #e5e5e5;
+  background-color: #E5E5E5;
 }
 
 * {
