@@ -9,11 +9,18 @@
 import React from "react";
 
 import styles from "./styles.css";
+import AppBar from "../AppBar";
 
-function Navigation({ topics }) {
+function Navigation({ topics, selectTopic }) {
+  const topicNodes = topics.map(t => (
+    <div key={t.name} onClick={() => selectTopic(t)}>
+      {t.name}
+    </div>
+  ));
   return (
     <div className={styles.navigation}>
-      This is the navigation component, there are {topics.length} topics
+      <AppBar />
+      {topicNodes}
     </div>
   );
 }
@@ -23,7 +30,8 @@ Navigation.propTypes = {
       name: React.PropTypes.string.isRequired,
       description: React.PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  selectTopic: React.PropTypes.func.isRequired
 };
 
 export default Navigation;
